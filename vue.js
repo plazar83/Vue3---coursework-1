@@ -40,7 +40,7 @@ const App = {
     notFinish() {
       return this.activeIndex !== this.steps.length - 1
     },
-    showReset () {
+    showReset() {
       return this.finish
     }
   }
