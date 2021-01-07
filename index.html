@@ -24,7 +24,7 @@
           <li v-for="(step, index) in steps" class="steps-item" :class="{active: activeIndex === index, done: activeIndex > index }"  :key="step" @click.prevent="setActive(index)"><span>{{index+1}}</span> {{step.title}}</li>
         </ul>
         <div v-if="!finish">
-          <button class="btn" :disabled="activeIndex" @click.prevent="prev">Назад</button>
+          <button class="btn" :disabled="!activeIndex" @click.prevent="prev">Назад</button>
           <button class="btn primary" @click.prevent="nextOfFinish">{{isLastStep ? 'Завершить' : 'Вперед'}}</button>
         </div>
         <button v-else class="btn" @click.prevent="reset">Начать заново</button>

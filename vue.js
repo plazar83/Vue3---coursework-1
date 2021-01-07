@@ -37,7 +37,7 @@ const App = {
     activeStep() {
       return this.steps[this.activeIndex]
     },
-    isLastStep () {
+    isLastStep() {
       return this.activeIndex === this.steps.length - 1
     }
   }
