@@ -15,7 +15,7 @@ const App = {
   methods: {
     prev() {
       if (this.activeIndex > 0) {
-        this.activeIndex -= 1
+        this.activeIndex--
       }
     },
     reset() {
@@ -24,7 +24,7 @@ const App = {
     },
     nextOfFinish() {
       if (this.activeIndex < this.steps.length - 1) {
-        this.activeIndex += 1
+        this.activeIndex++
       } else {
         this.finish = true
       }
@@ -35,13 +35,10 @@ const App = {
   },
   computed: {
     activeStep() {
-      return this.steps.filter((s, i) => i === this.activeIndex)
+      return this.steps[this.activeIndex]
     },
-    notFinish() {
-      return this.activeIndex !== this.steps.length - 1
-    },
-    showReset () {
-      return this.finish
+    isLastStep () {
+      return this.activeIndex === this.steps.length - 1
     }
   }
 }
